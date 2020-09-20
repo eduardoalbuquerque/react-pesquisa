@@ -11,17 +11,15 @@ const BASE_URL = 'https://webdevbrasil.herokuapp.com';
 const Records = () => {
 
     const [recordRespose, setrecordRespose] = useState<RecordResponse>();
-
-    console.log(recordRespose);
     const [activePage,setActivePage] = useState(0);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/records?linesPerPage=12`)
+        axios.get(`${BASE_URL}/records?linesPerPage=12&page=${activePage}`)
         .then(response => setrecordRespose(response.data))
     }, [activePage])
 
     const handlePageChange = (index: number) => {
-        setActivePage(index);
+        setActivePage(index)
     }
 
     return (

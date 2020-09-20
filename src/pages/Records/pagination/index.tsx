@@ -15,7 +15,7 @@ const Pagination = ({ totalPages = 0, goToPage, activePage }: Props) =>{
     <div className="pagination-container">
         {paginantionItem.map(item =>(
             <button 
-            key={item}
+                key={item}
                 className={`pagination-item ${activePage === item ? 'active' : 'inactive'}`} 
                 onClick={()=> goToPage(item)}
             >
